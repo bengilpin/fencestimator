@@ -1,22 +1,28 @@
 import "./BuildFence.scss";
+import React from "react";
+import { useLocation } from "react-router-dom";
 
-function BuildFence({ dimensions }) {
+function BuildFence() {
+  const locations = useLocation();
+  const formData = locations.state?.formData;
 
+  let length = formData.length;
+  let height = formData.height;
   let distanceApart = 8;
   let sections = length / 8;
-  
+
   if (sections % 8 != 0) {
     sections = Math.ceil(sections);
     distanceApart = Math.floor((length / sections) * 100) / 100;
   }
-  return [sections, distanceApart];
-
-  const builder = (fenceLength) => {
-    let sections = fenceLength / 8;
-    return sections;
-  };
-
-  return <></>;
+  return (
+    <div className="build-fence">
+      <p>
+        Your fence will need to have {sections} sections and each section should
+        be {distanceApart} ft apart.
+      </p>
+    </div>
+  );
 }
 
 export default BuildFence;
