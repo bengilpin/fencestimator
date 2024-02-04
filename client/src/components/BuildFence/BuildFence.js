@@ -10,12 +10,12 @@ function BuildFence() {
   const formData = locations.state?.formData;
   const [fenceData, setFenceData] = useState([]);
   const [measurements, setMeasurements] = useState({});
-  const [loading, setLoading] = useState(true); // Add loading state
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     if (!formData) return;
 
-    let isMounted = true; // Add a variable to track component mount status
+    let isMounted = true; 
 
     const fetchData = async () => {
       try {
@@ -183,7 +183,7 @@ function BuildFence() {
           updatedFenceData.push(updatedItem);
         }
 
-        // Check if the component is still mounted before updating state
+        
         if (isMounted) {
           setFenceData(updatedFenceData);
           setMeasurements({ length, height, distanceApart, sections });
@@ -204,7 +204,7 @@ function BuildFence() {
 
     fetchData();
 
-    // Cleanup function to set isMounted to false when component unmounts
+   
     return () => {
       isMounted = false;
     };
