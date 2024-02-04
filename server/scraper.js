@@ -16,7 +16,7 @@ const fetchPrice = async (link) => {
 
     await page.waitForSelector(
       ".hdca-product__description-pricing-price-value",
-      { timeout: 90000 } // Increased timeout to 90 seconds
+      { timeout: 90000 } 
     );
 
     const grabPrice = await page.evaluate(() => {
