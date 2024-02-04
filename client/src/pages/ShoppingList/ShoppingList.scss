@@ -1,0 +1,65 @@
+.shopping-list {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 1rem auto;
+
+}
+
+.container {
+    width: 60%;
+    margin-right: 1rem;   
+
+}
+
+.price-cell::before {
+    content: "$";
+  }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); // Reduce box shadow to make the table look less bulky
+}
+
+th,
+td {
+    padding: 2px; // Adjust padding for table cells
+    // background-color: rgba(255, 255, 255, 0.2);
+    color: black;
+    font-size: 10px; // Increase font size for better readability
+}
+
+th {
+    text-align: left;
+    border:1px solid black;
+}
+
+thead th {
+    background-color: #0f172a;
+    color: white;
+}
+
+
+tbody td {
+    position: relative;
+    background-color: white;
+    border: 1px solid black;
+}
+
+tbody td:hover {
+    background-color: lightgrey;
+}
+
+button {
+    height: 50px;
+    
+    
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

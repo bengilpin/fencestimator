@@ -1,0 +1,36 @@
+.form-container {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4rem;
+    padding-bottom: 2rem;
+
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        &--length {
+            margin-bottom: 8px;
+
+        }
+
+        &--height {
+            margin-bottom: 8px;
+
+
+        }
+
+        &--btn {
+            width:50%;
+            // margin: 0 auto;
+
+        }
+    }
+
+
+    
+}
