@@ -1,8 +1,8 @@
-import "./BuildFence.scss";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 import ShoppingList from "../../pages/ShoppingList/ShoppingList";
+import LoadingPage from "../LoadingPage/LoadingPage";
 
 function BuildFence() {
   console.log("buildfence mounted");
@@ -10,12 +10,12 @@ function BuildFence() {
   const formData = locations.state?.formData;
   const [fenceData, setFenceData] = useState([]);
   const [measurements, setMeasurements] = useState({});
-  const [loading, setLoading] = useState(true); 
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (!formData) return;
 
-    let isMounted = true; 
+    let isMounted = true;
 
     const fetchData = async () => {
       try {
@@ -68,12 +68,18 @@ function BuildFence() {
         let twoByFours = railsActual + sections;
         let twoByFourLength = Math.ceil(distanceApart);
 
-        const railBraceScrewsLink = "https://www.homedepot.ca/product/paulin--8-x-3-inch-square-drive-flat-head-deck-screw-unc-in-brown-1000pcs/1000152763";
-        const fenceBoardScrewsLink = "https://www.homedepot.ca/product/paulin--8-x-2-1-2-inch-square-drive-flat-head-deck-screw-unc-in-brown-1-200pcs/1000109794";
-        const twoByFourLink = "https://www.homedepot.ca/product/micropro-sienna-2-x-4-x-8-pressure-treated-wood-above-ground-use-only-/1000789777";
-        const strongTieLink = "https://www.homedepot.ca/product/simpson-strong-tie-fb-zmax-galvanized-fence-rail-bracket-for-2x4/1000152513";
-        const concreteLink = "https://www.homedepot.ca/product/sakrete-concrete-mix-30-kg-multipurpose-high-strength-premixed-cement-for-new-projects-and-repairs/1000109060";
-        const gravelLink = "https://www.homedepot.ca/product/sakrete-3-4-gravel-30-kg-for-general-use-landscaping-soil-conditioning-and-displays/1000149829";
+        const railBraceScrewsLink =
+          "https://www.homedepot.ca/product/paulin--8-x-3-inch-square-drive-flat-head-deck-screw-unc-in-brown-1000pcs/1000152763";
+        const fenceBoardScrewsLink =
+          "https://www.homedepot.ca/product/paulin--8-x-2-1-2-inch-square-drive-flat-head-deck-screw-unc-in-brown-1-200pcs/1000109794";
+        const twoByFourLink =
+          "https://www.homedepot.ca/product/micropro-sienna-2-x-4-x-8-pressure-treated-wood-above-ground-use-only-/1000789777";
+        const strongTieLink =
+          "https://www.homedepot.ca/product/simpson-strong-tie-fb-zmax-galvanized-fence-rail-bracket-for-2x4/1000152513";
+        const concreteLink =
+          "https://www.homedepot.ca/product/sakrete-concrete-mix-30-kg-multipurpose-high-strength-premixed-cement-for-new-projects-and-repairs/1000109060";
+        const gravelLink =
+          "https://www.homedepot.ca/product/sakrete-3-4-gravel-30-kg-for-general-use-landscaping-soil-conditioning-and-displays/1000149829";
 
         const postLink = (postHeight) => {
           if (postHeight === 5) {
@@ -183,7 +189,6 @@ function BuildFence() {
           updatedFenceData.push(updatedItem);
         }
 
-        
         if (isMounted) {
           setFenceData(updatedFenceData);
           setMeasurements({ length, height, distanceApart, sections });
@@ -204,7 +209,6 @@ function BuildFence() {
 
     fetchData();
 
-   
     return () => {
       isMounted = false;
     };
@@ -212,10 +216,13 @@ function BuildFence() {
 
   return (
     <div className="build-fence">
-      {!loading && <ShoppingList measurements={measurements} data={fenceData} />}
+      {loading ? (
+        <LoadingPage />
+      ) : (
+        <ShoppingList measurements={measurements} data={fenceData} />
+      )}
     </div>
   );
 }
 
 export default BuildFence;
-

@@ -1,13 +1,32 @@
-.how-it-works {
-    width: 50%;
-    height: 100vh;
-    background-color: white;
-    padding: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-    p {
-        font-size: 14px;
-    }
+
+h2 {
+    color: #0f172a;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+p {
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+
+a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
 }
