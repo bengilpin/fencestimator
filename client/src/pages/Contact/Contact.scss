@@ -31,8 +31,8 @@
             margin-bottom: 10px;
 
             a {
-                display: flex; // Ensure the anchor behaves like a flex container
-                align-items: center; // Vertically align items in the anchor
+                display: flex; 
+                align-items: center; 
                 text-decoration: none;
                 color: #007bff;
 
@@ -43,9 +43,9 @@
                     transition: color 0.3s ease;
                 }
 
-                // Add padding or margin between the icon and the text
+             
                 .icon {
-                    margin-right: 5px; // Adjust as needed
+                    margin-right: 5px; 
                 }
             }
         }
