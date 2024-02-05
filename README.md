@@ -1,70 +1,72 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+FENCESTIMATOR
 
-## Available Scripts
+Overview
 
-In the project directory, you can run:
+Fencestimator is a web application designed to simplify the process of estimating material costs for building fences. Users can select their desired fence style, input the required linear feet and height, and receive an accurate cost estimation based on Home Depot Canada's product listings. The app aims to streamline the planning phase of fence construction projects by providing users with real-time pricing information.
 
-### `npm start`
+Problem
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Estimating the cost of building a fence can be time-consuming and error-prone, especially for individuals without prior experience in construction. Homeowners and contractors often struggle to accurately calculate the quantity and cost of materials needed for a fencing project, leading to budget overruns and delays. Existing solutions may lack integration with local suppliers' pricing data, resulting in inaccurate estimations. EstiFence addresses these challenges by automating the estimation process and leveraging Home Depot Canada's product database to provide users with precise material costs.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+User Profile
 
-### `npm test`
+EstiFence caters to homeowners, contractors, and DIY enthusiasts involved in residential or commercial fence construction projects. Users may vary in their level of expertise, from novices seeking guidance on material requirements to experienced professionals looking for a convenient tool to streamline their workflow. The app must offer a user-friendly interface with intuitive controls to accommodate individuals with diverse technical backgrounds. Additionally, the platform should support both desktop and mobile devices to ensure accessibility on-the-go.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Fence Style Selection: Users choose from a variety of pre-defined fence styles. 
+Input Parameters: Users input the required linear feet and height of the fence.
+Material Cost Estimation: The app calculates the total cost of materials based on input parameters and real-time pricing data from Home Depot Canada.
+Shopping List Generation: A detailed list of materials, including quantities and prices, is generated for the user's reference.
+Export Options: Users can export the shopping list as a PDF or CSV file for offline access or sharing with contractors.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Implementation
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Tech Stack
+Frontend: HTML, CSS, JavaScript (React.js)
+Backend: Node.js, Express.js
+Web Scraping: Puppeteer (for Home Depot Canada website scraping)
+Database: MySql (for storing user preferences and data) - coming soon
+PDF Generation: JSPDF (for generating PDF reports)
 
-## Learn More
+APIs
+Home Depot Canada website (for retrieving real-time pricing data)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Sitemap
+Home Page
+Fence Style Selection
+Input Form
+Estimation Results
+Shopping List
+Export Options
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Data
+Real-time Pricing Data: Retrieved via web scraping from Home Depot Canada's website.
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+GET /fence-styles: Retrieve available fence styles.
+POST /estimate: Receive input parameters and return cost estimation.
+GET /shopping-list: Retrieve generated shopping list.
+POST /export: Generate and download PDF/CSV file.
 
-### Making a Progressive Web App
+Auth
+Authentication will not be implemented in the initial version of the app.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+Nice-to-haves
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Custom fence designs
+User authentication and account management
+Integration with additional suppliers for pricing data comparison
+Mobile app version for enhanced accessibility
+Interactive 3D fence visualization tool
